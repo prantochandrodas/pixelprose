@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthProvider";
 import { Bounce, toast } from "react-toastify";
-import Loading from "../Components/Loading";
+import Loading from "../Components/Loading/Loading";
 
 const Signup = () => {
     const {createUser,updateUser}=useContext(AuthContext);
@@ -15,6 +15,9 @@ const Signup = () => {
         setLoading(true);
         createUser(data.email,data.password)
         .then(result=>{
+            if(result?.user?.uid){
+                console.log('logined sucessfully')
+            }
             setLoading(true)
             const image =data.photo[0];
             const formData=new FormData();
@@ -82,14 +85,14 @@ const Signup = () => {
                     <form onSubmit={handleSubmit(handelSignup)} className="flex flex-col space-y-5">
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="Name" className="text-sm font-semibold text-gray-500">Name</label>
-                            <input type="text" {...register("name", { required: "Name Address is required" })} id="Name" autofocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            <input type="text" {...register("name", { required: "Name Address is required" })} id="Name" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
                             {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
                         </div>
 
                         {/*********************  email field  **********************/}
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                            <input {...register("email", { required: "Email Address is required" })} type="email" id="email" autofocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            <input {...register("email", { required: "Email Address is required" })} type="email" id="email" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
                             {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                         </div>
                         <div className="flex flex-col space-y-1">
@@ -101,7 +104,7 @@ const Signup = () => {
                         </div>
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="photo" className="text-sm font-semibold text-gray-500">Image</label>
-                            <input type="file"  {...register("photo", { required: "picture is required" })} id="Photo" autofocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            <input type="file"  {...register("photo", { required: "picture is required" })} id="Photo" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
                             {errors.photo && <p className='text-red-600'>{errors.photo?.message}</p>}
                         </div>
                         <div>

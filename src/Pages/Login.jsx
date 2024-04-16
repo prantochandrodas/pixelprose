@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Bounce, toast } from "react-toastify";
-import Loading from "../Components/loading";
+import Loading from "../Components/Loading/Loading";
+
 
 
 const Login = () => {
@@ -49,7 +50,7 @@ const Login = () => {
                         UI design on us!
                     </p>
                     <p className="flex flex-col items-center justify-center mt-10 text-center">
-                        <span>Don't have an account?</span>
+                        <span>Don{`'`}t have an account?</span>
                         <Link to="/signup" className="underline">Get Started!</Link>
                     </p>
                     <p className="mt-6 text-sm text-center text-gray-300">
@@ -62,7 +63,7 @@ const Login = () => {
                         {/*********************  email field  **********************/}
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                            <input {...register("email", { required: "Email Address is required" })} type="email" id="email" autofocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            <input {...register("email", { required: "Email Address is required" })} type="email" id="email" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
                             {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                         </div>
                         <div className="flex flex-col space-y-1">
