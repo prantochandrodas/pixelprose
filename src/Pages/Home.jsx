@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
+import HomeBanner from "../Components/HomeBanner/HomeBanner";
 
 const Home = () => {
     const { user } = useContext(AuthContext);
@@ -8,7 +9,7 @@ const Home = () => {
    
     return (
         <div>
-           
+           <HomeBanner/>
         </div>
     );
 };
