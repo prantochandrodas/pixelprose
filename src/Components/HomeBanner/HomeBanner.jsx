@@ -1,54 +1,46 @@
 import banner from '../../assets/banner/clideo_editor_7b7533750bca44d79ba128df30c6f144.mp4'
 import '../../Styles/HomeBanner.css';
+import { MdLocationPin } from "react-icons/md";
+import { BiCalendar } from "react-icons/bi";
 const HomeBanner = () => {
-    
+
     return (
         <div>
-              <section className="home h-[600px] lg:px-10 lg:h-[100vh] md:h-[50vh] pt-10 p-[20px] md:pt-20 lg:pt-40" id="home">
+            <section className="home h-[600px] lg:px-10 lg:h-[75vh] md:h-[50vh] pt-10 p-[20px] md:pt-20 lg:pt-40" id="home">
                 <video autoPlay loop muted playsInline src={banner} className='back-video'></video>
 
                 <div className="content lg:pt-[50px] md:pt-0 pt-[100px]">
-                    <h3 className="lg:text-4xl text-2xl text-white font-bold">Discover Your Future: <br /> Find Your Perfect College Match Today!
+                    <h3 className="lg:text-4xl text-2xl text-white font-bold">Embark on the journey of discovery <br /> for every mile traveled is a step
                         <br />
-                        Your Path to Success Starts Here.</h3>
-                    <p className='text-[12px] lg:text-[18px] mt-4 text-white'>Uncover Opportunities, Navigate Choices, and Excel.
-                        <br />  Empowering Your Journey to Higher Education Excellence.
-                        <br />  Begin Your Quest for the Ideal College Experience!</p>
+                        for every mile traveled is a step</h3>
+                    <p className='text-[12px] lg:text-[18px] mt-4 text-white'>Find yourself amidst the rhythm of the road, where each journey unveils new landscapes and stories waiting to be told. Let the bus be your vessel, carrying you through moments of wonder and discovery, as you traverse the paths less traveled</p>
+                    <div className='bg-white p-4 mt-4 drop-shadow-lg'>
+                        <h1 className='text-xl font-medium mb-4'>Find your ride</h1>
+                        <form className='lg:flex md:flex  items-center'>
+                            <div className='flex items-center mr-[20px] my-4 lg:my-0 md:my-0'>
+                                <div className='text-gray-600 text-[26px] mr-2'>
+                                    <MdLocationPin />
+                                </div>
+                                <select className='w-[260px] ps-2 rounded-md border border-[2px] border-black-400 lg:py-2.5 py-[5px] pe-10 shadow-md sm:text-sm' name="" id="">
+                                    <option value="">select</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <div className='flex items-center my-4 lg:my-0 md:my-0'>
+                                <div className='text-gray-600 text-[26px] mr-2'>
+                                <BiCalendar />
+                                </div>
+                               <input type="date" className='w-[260px] ps-2 rounded-md border border-[2px] border-black-400 lg:py-2.5 py-[5px] pe-10 shadow-md sm:text-sm' />
+                            </div>
 
-                    <form >
-                        <div className="relative mt-8 w-[70%] lg:w-[400px]">
-                            <label htmlFor="Search" className="sr-only"> Search </label>
-
-                            <input
-                                type="text"
-                                id="Search"
-                                name='search'
-                                placeholder="Search for colleges..."
-                                className="w-full ps-2 rounded-md border-gray-200 lg:py-2.5 py-[5px] pe-10 shadow-sm sm:text-sm"
-                            />
-
-                            <span className="absolute inset-y-0 end-0 grid w-10 place-content-center">
-                                <button type="button" className="text-gray-600 hover:text-gray-700">
-                                    <span className="sr-only">Search</span>
-
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth="1.5"
-                                        stroke="currentColor"
-                                        className="h-4 w-4"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                                        />
-                                    </svg>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+                            <div className='flex items-center my-4 lg:my-0 md:my-0 lg:ml-[30px]'>
+                                <button className='text-white lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab] lg:ml-[20px] md:ml-[20px] '>Search</button>
+                            </div>
+                            
+                        </form>
+                    </div>
                 </div>
             </section>
         </div>
