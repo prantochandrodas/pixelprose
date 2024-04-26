@@ -38,7 +38,13 @@ const AuthProvider=({children})=>{
             setLoading(true);
             return signInWithEmailAndPassword(auth,email,password)
         }
-    const authInfo={user,createUser,updateUser,loading,logOut,loginUser}
+
+        const findObj={
+            date:'0',
+            destination:'non',
+            bustype:'non'
+        }
+    const authInfo={user,createUser,updateUser,loading,logOut,loginUser,findObj}
 
 
     return(
