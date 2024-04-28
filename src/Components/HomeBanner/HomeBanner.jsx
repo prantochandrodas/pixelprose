@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { FaBus } from "react-icons/fa";
 const HomeBanner = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, } = useForm();
@@ -54,7 +55,7 @@ const HomeBanner = () => {
 
                             <div className='flex items-center mr-[20px] my-4 lg:my-0 md:my-0'>
                                 <div className='text-gray-600 text-[26px] mr-2'>
-                                    <MdLocationPin />
+                                    <FaBus />
                                 </div>
                                 <select name="bustype" {...register("bustype", { required: "bustype is required" })} className='w-[260px] ps-2 rounded-md border border-[2px] border-black-400 lg:py-2.5 py-[5px] pe-10 shadow-md sm:text-sm'>
                                     <option>Choose Bus Type</option>
