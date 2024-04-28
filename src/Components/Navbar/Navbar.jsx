@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="logo"><img src={logo} className="w-[140px]" alt="" /></div>
         <ul>
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/addbus">Add Bus</Link></li>
+            <li><Link to="/allbus">All Bus</Link></li>
             <li><Link to="/admission">Admission</Link></li>
             <li><Link to={`/myCollege/${user?.email}`}>My College</Link></li>
         </ul>

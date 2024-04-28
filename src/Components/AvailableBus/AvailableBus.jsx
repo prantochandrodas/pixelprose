@@ -1,5 +1,6 @@
 import { FaClock } from "react-icons/fa6";
 import { FaBusSimple } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const AvailableBus = ({bus}) => {
     return (
@@ -24,7 +25,7 @@ const AvailableBus = ({bus}) => {
                     <h1 className="text-2xl font-[500]">Ticket Price</h1>
                     <p className="text-orange-400 text-xl"> &#2547;{bus?.price}</p>
                     <div className='flex my-4 lg:mt-4 lg:my-0 md:my-0'>
-                        <button className='text-white lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab]'>Book</button>
+                        <Link to={`/selectedBus/${bus?._id}`} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab]'>Book</Link>
                     </div>
                 </div>
 
