@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { BiX } from "react-icons/bi";
 import { AuthContext } from "../../Context/AuthProvider";
 import { Bounce, toast } from "react-toastify";
+import Loading from "../Loading/Loading";
 const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
     const { register, handleSubmit, formState: { errors }, } = useForm();
     const modelRef=useRef();
@@ -16,15 +17,19 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
     const {user}=useContext(AuthContext);
     console.log();
     const handelBooking=data=>{
+        setLoading(true);
         const bookingInfo={
             bookingId:selectedBus._id,
+            bustype:selectedBus.bustype,
             name:data.name,
-            email:data.email,
+            email:user?.email,
             destination:selectedBus.destination,
-            price:data.price
+            price:selectedSeats.length*selectedBus.price,
+            selectedSeats:selectedSeats
         }
+        
 
-        fetch("http://localhost:3000/addBus", {
+        fetch("http://localhost:3000/addbooking", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -60,8 +65,13 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
                     });
                     setLoading(false)
                 }
+                window.location.reload();
                 onClose();
             })
+    }
+
+    if(loading){
+        return <Loading/>
     }
     return (
         <div ref={modelRef} onClick={closeModel} className="fixed inset-0 bg-black bg-opacity-30 backdrom-blur-sm flex justify-center items-center">
@@ -77,16 +87,16 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
                         </div>
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
-                            <input value={user?.email} disabled {...register("email", { required: "Email Address is required" })} type="email" id="email" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
-                            {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                            <input value={user?.email} disabled {...register("email")} type="email" id="email" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            {/* {errors.email && <p className='text-red-600'>{errors.email?.message}</p>} */}
                         </div>
                         <div className="flex flex-col space-y-1">
                             <label htmlFor="price" className="text-sm font-semibold text-gray-500">price</label>
-                            <input value={selectedSeats.length*selectedBus.price} disabled {...register("price", { required: "price is required" })} type="text" id="price" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
-                            {errors.price && <p className='text-red-600'>{errors.price?.message}</p>}
+                            <input value={selectedSeats.length*selectedBus.price} disabled {...register("price")} type="text" id="price" autoFocus className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
+                            {/* {errors.price && <p className='text-red-600'>{errors.price?.message}</p>} */}
                         </div>
+                    <button type="submit" className="bg-blue-400 text-white w-[150px] my-4 h-[40px]">Confirm</button>
                     </form>
-                    <button className="bg-blue-400 text-white w-[150px] my-4 h-[40px]">Confirm</button>
                 </div>
             </div>
         </div>

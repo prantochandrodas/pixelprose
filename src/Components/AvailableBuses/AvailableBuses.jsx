@@ -17,7 +17,7 @@ const AvailableBuses = () => {
         }
     });
 
-
+console.log(allbuses);
     const { register, handleSubmit, formState: { errors }, } = useForm();
     const { findObj } = useContext(AuthContext);
     const navigate=useNavigate();
