@@ -15,7 +15,6 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
     }
     const [loading,setLoading]=useState(false);
     const {user}=useContext(AuthContext);
-    console.log();
     const handelBooking=data=>{
         setLoading(true);
         const bookingInfo={
@@ -23,6 +22,7 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
             bustype:selectedBus.bustype,
             name:data.name,
             email:user?.email,
+            time:selectedBus.time,
             destination:selectedBus.destination,
             price:selectedSeats.length*selectedBus.price,
             selectedSeats:selectedSeats

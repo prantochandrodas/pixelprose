@@ -5,8 +5,7 @@ import BuySteps from "../Components/BuySteps/BuySteps";
 import Amenities from "../Components/Amenities/Amenities";
 
 const Home = () => {
-    const { user } = useContext(AuthContext);
-    console.log(user);
+   
    
    
     return (

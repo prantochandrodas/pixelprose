@@ -31,7 +31,7 @@ const Navbar = () => {
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/allbus">All Bus</Link></li>
-            <li><Link to="/admission">Admission</Link></li>
+            <li><Link to="/mybookings">My Bookings</Link></li>
             <li><Link to={`/myCollege/${user?.email}`}>My College</Link></li>
         </ul>
 

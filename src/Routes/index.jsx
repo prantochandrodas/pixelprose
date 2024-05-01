@@ -8,6 +8,7 @@ import AddBus from "../Components/AddBus/AddBus";
 import SearchBus from "../Components/SearchBus/SearchBus";
 import SelectedBus from "../Components/SelectedBus/SelectedBus";
 import SelectedBusPage from "../Pages/SelectedBusPage";
+import MyBookings from "../Pages/MyBookings";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
           path:'/selectedBus/:id',
           element:<SelectedBusPage/>,
           loader:({params})=>fetch(`http://localhost:3000/selectedBus/${params.id}`)
+        },
+        {
+          path:'/mybookings',
+          element:<MyBookings/>
         }
       ]
     },

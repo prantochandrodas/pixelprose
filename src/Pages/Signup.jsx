@@ -22,7 +22,6 @@ const Signup = () => {
             const image =data.photo[0];
             const formData=new FormData();
             formData.append("image",image)
-            console.log(imgHostKey)
             const uri=`https://api.imgbb.com/1/upload?key=${imgHostKey}`;
             fetch(uri,{
                 method:'POST',

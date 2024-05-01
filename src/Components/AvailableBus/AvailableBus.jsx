@@ -6,14 +6,15 @@ const AvailableBus = ({ bus }) => {
     const d = new Date() // today, now
 
     // Timezone zero UTC offset
-    console.log(d.toISOString().slice(0, 10))
+
 
     const presentDate=new Date(d);
     const busAddDate=new Date(bus?.date);
     return (
         <div>
             {
-                busAddDate>=presentDate ? <div className="lg:ml-[20px] md:ml-[50px]  lg:w-[800px] lg:h-[150px] my-10 p-[20px] border border-gray-300 lg:flex justify-between bg-[white]">
+                busAddDate>=presentDate ?
+                 <div className="lg:ml-[20px] md:ml-[50px]  lg:w-[800px] lg:h-[150px] my-10 p-[20px] border border-gray-300 lg:flex justify-between bg-[white]">
                     <div>
                         <h1 className="text-2xl font-[500] mb-[10px]">{bus?.destination}<span className="text-sm text-gray-400 ml-2">({bus?.bustype})</span></h1>
                         <p className="text-gray-400 mb-[10px]">Seat layout 2 x 2</p>

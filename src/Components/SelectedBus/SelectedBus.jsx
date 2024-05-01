@@ -7,7 +7,6 @@ import { useQuery } from "react-query";
 
 const SelectedBus = () => {
     const selectedBus = useLoaderData();
-    console.log(selectedBus);
     const [selectedSeats, setSelectedSeats] = useState([]);
 
     const handleSeatClick = (seat) => {
@@ -21,7 +20,6 @@ const SelectedBus = () => {
     const [showModal, setShowModal] = useState(false);
 
 
-    console.log(selectedSeats.includes(selectedBus.seat[1]))
 
     return (
         <div className="w-[90%]  lg:flex md:flex mx-auto mt-20 justify-center">

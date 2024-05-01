@@ -31,7 +31,7 @@ const AddBus = () => {
             ]
 
         }
-        console.log(busInfo)
+    
         fetch("http://localhost:3000/addBus", {
             method: 'POST',
             headers: {
