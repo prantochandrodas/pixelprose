@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FaClock } from "react-icons/fa6";
 import { FaBusSimple } from "react-icons/fa6";
 
-const SingelBookingBus = ({ bus }) => {
+const SingelBookingBus = ({ bus,deleteSelectedSeat }) => {
     return (
         <div className="lg:ml-[20px] md:ml-[50px]  lg:w-[800px] lg:h-[150px] my-10 p-[20px] border border-gray-300 lg:flex justify-between bg-[white]">
             <div>
@@ -27,7 +27,7 @@ const SingelBookingBus = ({ bus }) => {
             </div>
             <div>
                 <div className='flex flex-col gap-4 my-4 lg:mt-4 lg:my-0 md:my-0'>
-                    <Link to={`/selectedBus/${bus?._id}`} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-red-800 text-white'>Cancle Booking</Link>
+                    <Link onClick={()=>deleteSelectedSeat(bus?._id)} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-red-800 text-white'>Cancle Booking</Link>
                     <Link to={`/selectedBus/${bus?._id}`} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab]'>Pay</Link>
                 </div>
             </div>
