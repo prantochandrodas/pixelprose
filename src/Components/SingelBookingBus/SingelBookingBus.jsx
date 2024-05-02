@@ -28,7 +28,7 @@ const SingelBookingBus = ({ bus,deleteSelectedSeat }) => {
             <div>
                 <div className='flex flex-col gap-4 my-4 lg:mt-4 lg:my-0 md:my-0'>
                     <Link onClick={()=>deleteSelectedSeat(bus?._id)} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-red-800 text-white'>Cancle Booking</Link>
-                    <Link to={`/selectedBus/${bus?._id}`} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab]'>Pay</Link>
+                    <Link to={`/myBookedBus/${bus?._id}`} className='text-white  flex items-center justify-center lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab]'>See Booking</Link>
                 </div>
             </div>
 

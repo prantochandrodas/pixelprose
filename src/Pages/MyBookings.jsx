@@ -68,6 +68,7 @@ const MyBookings = () => {
 
             })
     }
+    console.log(myBookings)
     if (isLoading) {
         return <Loading />
     }

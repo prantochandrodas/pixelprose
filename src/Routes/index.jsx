@@ -9,6 +9,7 @@ import SearchBus from "../Components/SearchBus/SearchBus";
 import SelectedBus from "../Components/SelectedBus/SelectedBus";
 import SelectedBusPage from "../Pages/SelectedBusPage";
 import MyBookings from "../Pages/MyBookings";
+import MyBookedBus from "../Pages/MyBookedBus";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
           path:'/selectedBus/:id',
           element:<SelectedBusPage/>,
           loader:({params})=>fetch(`http://localhost:3000/selectedBus/${params.id}`)
+        },
+        {
+          path:'/myBookedBus/:id',
+          element:<MyBookedBus/>,
+          loader:({params})=>fetch(`http://localhost:3000/myBookedBus/${params.id}`)
         },
         {
           path:'/mybookings',
