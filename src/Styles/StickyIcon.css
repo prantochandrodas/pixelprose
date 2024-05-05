@@ -1,0 +1,50 @@
+/* StickySocialIcon.css */
+
+.sticky-social-icon-container {
+    position: fixed;
+    top: 70%;
+    right: 0px; /* Adjust the right spacing as needed */
+    transform: translateY(-50%);
+    z-index: 1000; /* Adjust the z-index as needed */
+    display: flex;
+    flex-direction: column;
+  }
+.sticky-social-icon-container .social-icon1:hover{
+   
+    box-shadow:2px 5px 10px grey;
+    /* font-size:30px; */
+    bottom: 10px;
+}
+
+.sticky-social-icon-container .social-icon2:hover{
+   
+    box-shadow:2px 5px 10px grey;
+    bottom: 10px;
+    /* font-size:30px; */
+}
+.sticky-social-icon-container .social-icon3:hover{
+   
+    box-shadow:2px 5px 10px grey;
+    /* font-size:30px; */
+    bottom: 10px;
+}
+
+
+  .social-icon {
+   
+    text-align: center;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+
+ 
+  
+  .social-icon:hover {
+    background-color: #00548f; /* Adjust the hover background color as needed */
+  }
+  
