@@ -10,6 +10,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import StickyIcon from './Components/StickyIcon/StickyIcon'
 
 
 // Create a client
@@ -19,6 +20,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <AuthProvider>
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      <StickyIcon/>
+
       </QueryClientProvider>
       <ToastContainer />
     </AuthProvider>

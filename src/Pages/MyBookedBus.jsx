@@ -6,10 +6,10 @@ const MyBookedBus = () => {
     const selectedBus = useLoaderData();
 
     return (
-        <div className="w-[90%]  lg:flex md:flex mx-auto mt-20 justify-center">
+        <div className="w-[90%]  lg:flex md:flex mx-auto items-center mt-32 justify-center">
             <MyBookedBusForm selectedBus={selectedBus}/>
-            <div className="w-[800px] mb-10">
-                <div className="w-[400px] lg:ml-5 border border-gray-400">
+            <div className="lg:w-[800px] w-full md:w-[600px] mb-10">
+                <div className="lg:w-[400px] md:w-[400px] lg:ml-5 border border-gray-400">
                     <div className="p-4 flex justify-between">
                         <h1 className="font-[500]">Door</h1>
                         <img src={steering} className="w-[40px]" alt="" />

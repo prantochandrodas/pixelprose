@@ -3,7 +3,7 @@ import { AuthContext } from "../Context/AuthProvider";
 import HomeBanner from "../Components/HomeBanner/HomeBanner";
 import BuySteps from "../Components/BuySteps/BuySteps";
 import Amenities from "../Components/Amenities/Amenities";
-import StickyIcon from "../Components/StickyIcon/StickyIcon";
+
 
 const Home = () => {
    
@@ -14,7 +14,7 @@ const Home = () => {
            <HomeBanner/>
            <BuySteps/>
            <Amenities/>
-           <StickyIcon/>
+           
         </div>
     );
 };

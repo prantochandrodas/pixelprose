@@ -5,7 +5,7 @@ const MyBookedBusForm = ({selectedBus}) => {
 
     return (
         <div>
-            <div className=" p-10 w-[350px] h-[450] sticky top-0  border border-gray-300 my-10">
+            <div className=" p-10 lg:w-[350px] md:w-[300px] h-[450px] mr-4 sticky top-0  border border-gray-300 my-10">
                 <div>
                     <h1 className="font-[500] text-center my-4">Pay to Confirm or it can be canceled</h1>
                     <div className="flex flex-col space-y-1">

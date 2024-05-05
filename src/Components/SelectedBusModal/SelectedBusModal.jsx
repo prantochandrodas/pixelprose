@@ -92,7 +92,7 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
         <div ref={modelRef} onClick={closeModel} className="fixed inset-0 bg-black bg-opacity-30 backdrom-blur-sm flex justify-center items-center">
             <div className="flex flex-col gap-[10px]">
                 <button onClick={onClose} className="text-[30px] place-self-end"><BiX /></button>
-                <div className="bg-white p-4 w-[500px]">
+                <div className="bg-white p-4 lg:w-[500px] md:lg:w-[500px] w-[350px]">
                     <h1 className="text-2xl text-[500]">Confirm your ticket</h1>
                     <form onSubmit={handleSubmit(handelBooking)}>
                         <div className="flex flex-col space-y-1">

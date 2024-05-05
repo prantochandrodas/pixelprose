@@ -35,8 +35,8 @@ const AvailableBuses = () => {
         return <Loading />
     }
     return (
-        <div className="w-[90%] flex justify-center">
-            <div className=" p-10 w-[350px] h-[400px] sticky top-0  border border-gray-300 my-10">
+        <div className="w-[90%]  lg:flex md:flex mx-auto mt-20 justify-center">
+            <div className=" p-10 w-[350px] h-[400px] lg:sticky md:sticky lg:top-0 md:top-0  border border-gray-300 my-10">
                 <form onSubmit={handleSubmit(handleSearch)}>
                     <div className="flex flex-col space-y-1">
                         <label htmlFor="date" className="text-sm font-semibold text-gray-500">Date</label>

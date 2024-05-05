@@ -5,7 +5,7 @@ const SelectedBusForm = ({selectedBus,setShowModal}) => {
    
     return (
         <div>
-            <div className=" p-10 w-[350px] h-[400px] sticky top-0  border border-gray-300 my-10">
+            <div className=" p-10 w-[350px] md:w-[300px] md:mr-4 lg:w-[350px] h-[400px] sticky top-0  border border-gray-300 my-10">
                 <div>
                     <div className="flex flex-col space-y-1">
                         <label htmlFor="date" className="text-sm font-semibold text-gray-500">Date</label>
