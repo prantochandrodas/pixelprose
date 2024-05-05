@@ -14,7 +14,7 @@ const SearchBus = () => {
     const { data: findbus = [], isLoading, refetch } = useQuery({
         queryKey: ['searchBus'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:3000/searchBus?destination=${searchValue.destination}&&date=${searchValue.date}&&bustype=${searchValue.bustype}`);
+            const res = await fetch(`https://pixelprose-backend.vercel.app/searchBus?destination=${searchValue.destination}&&date=${searchValue.date}&&bustype=${searchValue.bustype}`);
             const data = await res.json();
             return data;
         }

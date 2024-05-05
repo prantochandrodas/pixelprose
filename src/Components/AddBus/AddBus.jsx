@@ -32,7 +32,7 @@ const AddBus = () => {
 
         }
     
-        fetch("http://localhost:3000/addBus", {
+        fetch("https://pixelprose-backend.vercel.app/addBus", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

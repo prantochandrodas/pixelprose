@@ -11,7 +11,7 @@ const AvailableBuses = () => {
     const { data: allbuses = [], isLoading } = useQuery({
         queryKey: ['allbuses'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:3000/allBus`);
+            const res = await fetch(`https://pixelprose-backend.vercel.app/allBus`);
             const data = await res.json();
             return data;
         }

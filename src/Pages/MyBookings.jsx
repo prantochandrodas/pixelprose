@@ -12,7 +12,7 @@ const MyBookings = () => {
     const { data: myBookings = [], isLoading ,refetch} = useQuery({
         queryKey: ['myBookings'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:3000/myBookings?email=${user?.email}`);
+            const res = await fetch(`https://pixelprose-backend.vercel.app/myBookings?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -20,7 +20,7 @@ const MyBookings = () => {
    
     const deleteSelectedSeat=(id)=>{
         console.log(id)
-        fetch(`http://localhost:3000/deleteSelectedSeat/${id}`, {
+        fetch(`https://pixelprose-backend.vercel.app/deleteSelectedSeat/${id}`, {
             method: 'DELETE',
            
         })
@@ -45,7 +45,7 @@ const MyBookings = () => {
     }
 
     const deleteAllSelectedSeat=()=>{
-        fetch(`http://localhost:3000/deleteAllSelectedSeat/${user?.email}`, {
+        fetch(`https://pixelprose-backend.vercel.app/deleteAllSelectedSeat/${user?.email}`, {
             method: 'DELETE',
            
         })

@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 import logo from '../../assets/logo.png';
@@ -8,13 +8,6 @@ const Navbar = () => {
     const {user,logOut}=useContext(AuthContext);
     const [open, setOpen] = useState(false);
     const navigate = useNavigate()
-    let menuRef = useRef();
-    let imgRef = useRef();
-    window.addEventListener('click', (e) => {
-        if (e.target !== menuRef.current && e.target !== imgRef.current) {
-            setOpen(false)
-        }
-    })
     const handelLogout = () => {
         logOut()
             .then(() => {
@@ -26,9 +19,9 @@ const Navbar = () => {
         <input type="checkbox" name id="chk1" />
         <div className="logo"><img src={logo} className="w-[140px]" alt="" /></div>
         <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/allbus">All Bus</Link></li>
-            <li><Link to="/mybookings">My Bookings</Link></li>
+            <li><Link  to="/">Home</Link></li>
+            <li><Link  to="/allbus">All Bus</Link></li>
+            <li><Link  to="/mybookings">My Bookings</Link></li>
         </ul>
 
         {/* user photo  */}

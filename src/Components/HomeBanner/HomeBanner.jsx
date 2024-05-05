@@ -27,7 +27,7 @@ const HomeBanner = () => {
             <section className="home h-[600px] lg:px-10 lg:h-[75vh] md:h-[50vh] pt-10 p-[20px] md:pt-20 lg:pt-40" id="home">
                 <video autoPlay loop muted playsInline src={banner} className='back-video'></video>
 
-                <div className="content lg:pt-[50px] md:pt-0 pt-[100px]">
+                <div className="content lg:pt-[0px] md:pt-0 pt-[100px]">
                     <div className='w-[70%]'>
                         <h3 className="lg:text-4xl text-2xl text-white font-bold">Embark on the journey of discovery <br /> for every mile traveled is a step
                             <br />
@@ -36,7 +36,7 @@ const HomeBanner = () => {
                     </div>
                     <div className='bg-white p-4 mt-4 drop-shadow-lg'>
                         <h1 className='text-xl font-medium mb-4'>Find your ride</h1>
-                        <form onSubmit={handleSubmit(handleSearch)} className='lg:!flex lg:flex-row flex flex-col md:!grid !grid-cols-2  md:gap-[20px] lg:items-center'>
+                        <form onSubmit={handleSubmit(handleSearch)} className='lg:!flex lg:flex-row flex flex-col md:!grid !grid-cols-2 items-center  md:gap-[20px] lg:items-center'>
 
                             <div className='flex items-center mr-[20px] my-4 lg:my-0 md:my-0'>
                                 <div className='text-gray-600 text-[26px] mr-2'>
@@ -74,7 +74,7 @@ const HomeBanner = () => {
                             </div>
 
                             <div className='flex items-center my-4 lg:my-0 md:my-0 lg:ml-[30px]'>
-                                <button className='text-white lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab] lg:ml-[20px] md:ml-[20px] '>Search</button>
+                                <button className='text-white lg:w-[130px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab] lg:ml-[0px] md:ml-[20px] '>Search</button>
                             </div>
 
                         </form>

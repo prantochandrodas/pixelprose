@@ -37,12 +37,12 @@ const router = createBrowserRouter([
         {
           path:'/selectedBus/:id',
           element:<SelectedBusPage/>,
-          loader:({params})=>fetch(`http://localhost:3000/selectedBus/${params.id}`)
+          loader:({params})=>fetch(`https://pixelprose-backend.vercel.app/selectedBus/${params.id}`)
         },
         {
           path:'/myBookedBus/:id',
           element:<MyBookedBus/>,
-          loader:({params})=>fetch(`http://localhost:3000/myBookedBus/${params.id}`)
+          loader:({params})=>fetch(`https://pixelprose-backend.vercel.app/myBookedBus/${params.id}`)
         },
         {
           path:'/mybookings',

@@ -44,7 +44,7 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
         }
         
 
-        fetch("http://localhost:3000/addbooking", {
+        fetch("https://pixelprose-backend.vercel.app/addbooking", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
