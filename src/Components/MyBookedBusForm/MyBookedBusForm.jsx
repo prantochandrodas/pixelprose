@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 const MyBookedBusForm = ({selectedBus}) => {
@@ -28,14 +29,10 @@ const MyBookedBusForm = ({selectedBus}) => {
 
                     </div>
                     <div className="flex flex-col space-y-1 my-4">
-                        <label htmlFor="email" className="text-sm font-semibold text-gray-500">Bustype</label>
+                        <label htmlFor="email" className="text-sm font-semibold text-gray-500">Price</label>
                         <input type="text" value={selectedBus.price} className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
-
                     </div>
 
-                    <div className='flex items-center my-4 lg:mt-4 lg:my-0 md:my-0 lg:ml-[30px] '>
-                        <button className='text-white lg:w-[200px] md:w-[200px] w-[260px] h-[40px] bg-[#0245ab] lg:ml-[20px] md:ml-[20px]'>Pay</button>
-                    </div>
                 </div>
             </div>  
         </div>

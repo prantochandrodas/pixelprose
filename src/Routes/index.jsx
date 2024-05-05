@@ -6,10 +6,12 @@ import Signup from "../Pages/Signup";
 import AvailableBuses from "../Components/AvailableBuses/AvailableBuses";
 import AddBus from "../Components/AddBus/AddBus";
 import SearchBus from "../Components/SearchBus/SearchBus";
-import SelectedBus from "../Components/SelectedBus/SelectedBus";
 import SelectedBusPage from "../Pages/SelectedBusPage";
 import MyBookings from "../Pages/MyBookings";
 import MyBookedBus from "../Pages/MyBookedBus";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import Payment from "../Components/Payment/Payment";
+
 
 const router = createBrowserRouter([
     {
@@ -44,7 +46,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/mybookings',
-          element:<MyBookings/>
+          element:<PrivetRoute><MyBookings/></PrivetRoute>
         }
       ]
     },

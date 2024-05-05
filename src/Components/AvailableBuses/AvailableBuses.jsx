@@ -9,13 +9,14 @@ import { useNavigate } from "react-router-dom";
 const AvailableBuses = () => {
     const [loading, setLoading] = useState(false);
     const { data: allbuses = [], isLoading } = useQuery({
-        queryKey: ['allColleges'],
+        queryKey: ['allbuses'],
         queryFn: async () => {
             const res = await fetch(`http://localhost:3000/allBus`);
             const data = await res.json();
             return data;
         }
     });
+
 
 
     const { register, handleSubmit, formState: { errors }, } = useForm();
@@ -70,7 +71,7 @@ const AvailableBuses = () => {
 
             <div>
                 {
-                    allbuses?.map(bus => <AvailableBus
+                    allbuses?.slice(0,10).map(bus => <AvailableBus
                         key={bus?._id}
                         bus={bus}
                     ></AvailableBus>)

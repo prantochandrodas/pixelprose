@@ -343,7 +343,7 @@ const SelectedBus = () => {
 
                     </div>
                 </div>
-                {showModal && <SelectedBusModal selectedSeats={selectedSeats} selectedBus={selectedBus} onClose={() => setShowModal(false)} />}
+                {showModal && <SelectedBusModal  selectedSeats={selectedSeats} selectedBus={selectedBus} onClose={() => setShowModal(false)} />}
 
             </div>
         </div>

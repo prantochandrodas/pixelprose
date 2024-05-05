@@ -6,6 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 import { Bounce, toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
+    
     const { register, handleSubmit, formState: { errors }, } = useForm();
     const modelRef=useRef();
     const closeModel=(e)=>{
@@ -26,6 +27,7 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
             destination:selectedBus.destination,
             price:selectedSeats.length*selectedBus.price,
             bookedSeats:selectedSeats,
+            date:selectedBus.date,
             seat:[
                 'A1','A2','A3','A4',
                 'B1','B2','B3','B4',

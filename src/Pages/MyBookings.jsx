@@ -68,13 +68,12 @@ const MyBookings = () => {
 
             })
     }
-    console.log(myBookings)
     if (isLoading) {
         return <Loading />
     }
     return (
-        <div className="flex w-[90%] mx-auto items-center">
-            <div className="p-10 border border-gray-400 h-[300px]">
+        <div className="flex w-[90%] mx-auto ">
+            <div className="p-10 border mt-10 border-gray-400 top-0 sticky h-[300px]">
                 <div className="flex flex-col space-y-1">
                     <label htmlFor="email" className="text-sm font-semibold text-gray-500">email</label>
                     <input name="email" value={user?.email} disabled type="email" className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200" />
