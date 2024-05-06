@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthProvider";
 import { useForm } from "react-hook-form";
 import { Bounce, toast } from "react-toastify";
@@ -12,7 +12,9 @@ const Login = () => {
     const {loginUser}=useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, } = useForm();
     const navigate=useNavigate();
-    const from = location.state?.from?.pathname || '/';
+    const location =useLocation();
+    const from =location.state?.from?.pathname || '/';
+    console.log()
     const handelLogin=data=>{
         setLoading(true);
         loginUser(data.email,data.password)
@@ -30,8 +32,8 @@ const Login = () => {
                     theme: "light",
                     transition: Bounce,
                     });
+                    navigate(from,{replace:true});
             }
-            navigate(from, { replace: true });
             setLoading(false);
         })
     }

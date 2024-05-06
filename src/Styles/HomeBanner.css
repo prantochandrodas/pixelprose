@@ -5,7 +5,6 @@
     
     .home .content{
       max-width: 80rem;
-  
     }
     
     .back-video{
@@ -13,7 +12,7 @@
       right: 0;
       bottom: 0;
       z-index: -1;
-     object-fit: cover;
+      object-fit: cover;
     }
     
   

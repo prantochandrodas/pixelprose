@@ -3,7 +3,7 @@ import { BsTicket } from "react-icons/bs";
 import { FaCcPaypal } from "react-icons/fa";
 const BuySteps = () => {
     return (
-        <div className="lg:my-[100px] md:my-[100px] mt-[150px]">
+        <div className="lg:my-[100px] md:my-[100px] mt-[300px]">
             <h1 className="lg:text-4xl md:text-4xl text-2xl font-[500] text-center">Get your tickets with just 3 steps</h1>
 
             <div className="flex lg:flex-row md:flex-row  flex-col  items-center justify-center my-10 md:gap-[50px] gap-[30px] lg:gap-[50px]">
