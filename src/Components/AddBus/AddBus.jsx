@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Bounce, toast } from "react-toastify";
 import Loading from "../Loading/Loading";
+import AddTodaysAllBus from "./AddTodaysAllBus";
 
 
 const AddBus = () => {
@@ -9,6 +10,7 @@ const AddBus = () => {
     
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const handelAddBus = data => {
+        console.log(data.time)
         setLoading(true);
         const busInfo = {
             price: data.price,
@@ -76,6 +78,8 @@ const AddBus = () => {
     }
     return (
         <div className="w-[80%] mx-auto my-10">
+            <AddTodaysAllBus/>
+            <h1 className="text-2xl font-[500] mt-10">Or add one by one</h1>
             <form onSubmit={handleSubmit(handelAddBus)} className="flex flex-col space-y-5">
                 {/*********************  email field  **********************/}
                 <div className="flex flex-col space-y-1">
