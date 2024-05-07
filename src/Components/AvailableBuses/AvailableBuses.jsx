@@ -16,7 +16,7 @@ const AvailableBuses = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch(`http://localhost:3000/allBus?page=${page}&size=${size}`)
+        fetch(`https://pixelprose-backend.vercel.app/allBus?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(result => {
                 setDatas(result)

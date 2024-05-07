@@ -80,7 +80,7 @@ const AddBus = () => {
         <div className="w-[80%] mx-auto my-10">
             <AddTodaysAllBus/>
             <h1 className="text-2xl font-[500] mt-10">Or add one by one</h1>
-            <form onSubmit={handleSubmit(handelAddBus)} className="flex flex-col space-y-5">
+                  <form onSubmit={handleSubmit(handelAddBus)} className="flex flex-col space-y-5">
                 {/*********************  email field  **********************/}
                 <div className="flex flex-col space-y-1">
                     <label htmlFor="destination" className="text-sm font-semibold text-gray-500">Bus Destination</label>
