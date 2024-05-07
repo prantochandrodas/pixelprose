@@ -4,21 +4,25 @@ import AvailableBus from "../AvailableBus/AvailableBus";
 import Loading from "../Loading/Loading";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const AvailableBuses = () => {
     const [loading, setLoading] = useState(false);
-    const { data: allbuses = [], isLoading } = useQuery({
-        queryKey: ['allbuses'],
-        queryFn: async () => {
-            const res = await fetch(`https://pixelprose-backend.vercel.app/allBus`);
-            const data = await res.json();
-            return data;
-        }
-    });
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(6);
+    const [allbuses,setDatas]=useState([]);
+    const newpages = Math.ceil(allbuses.count / size);
 
 
-
+    useEffect(() => {
+        setLoading(true);
+        fetch(`http://localhost:3000/allBus?page=${page}&size=${size}`)
+            .then(res => res.json())
+            .then(result => {
+                setDatas(result)
+                setLoading(false);
+            })
+    }, [page, size]);
     const { register, handleSubmit, formState: { errors }, } = useForm();
     const { findObj } = useContext(AuthContext);
     const navigate=useNavigate();
@@ -31,7 +35,7 @@ const AvailableBuses = () => {
         navigate('/searchBus')
         setLoading(false);
     }
-    if (isLoading || loading) {
+    if (loading) {
         return <Loading />
     }
     return (
@@ -71,12 +75,24 @@ const AvailableBuses = () => {
 
             <div>
                 {
-                    allbuses?.slice(0,10).map(bus => <AvailableBus
+                    allbuses?.buses?.slice(0,10).map(bus => <AvailableBus
                         key={bus?._id}
                         bus={bus}
                     ></AvailableBus>)
                 }
+                 <div className='w-[90%] mx-auto my-4'>
+                <p className='font-bold text-xl'>Current Selected Page : {page}</p>
+                <div className="flex my-4 p-2 border border-gray-400 inline">
+                {
+                    newpages >= 0 ? [...Array(newpages).keys()]?.map(number => <div key={number}>
+                        <button key={number} className={page === number ? 'bg-[blue] w-[30px] h-[30px] rounded-full text-white  mx-2' : 'btn mx-2'} onClick={() => setPage(number)}>{number}</button>
+                    </div>) :
+                        <></>
+                }
+                </div>
             </div>
+            </div>
+           
 
         </div>
     );

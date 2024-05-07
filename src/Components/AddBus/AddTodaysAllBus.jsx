@@ -432,7 +432,7 @@ const AddTodaysAllBus = () => {
             }
         ]
     
-        fetch("http://localhost:3000/addMultiBus", {
+        fetch("https://pixelprose-backend.vercel.app/addMultiBus", {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
