@@ -53,6 +53,7 @@ const SelectedBusModal = ({onClose,selectedBus,selectedSeats}) => {
         })
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 if (result == false) {
                     toast.error('Already Added', {
                         position: "top-right",

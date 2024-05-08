@@ -82,7 +82,7 @@ const AvailableBuses = () => {
                 }
                  <div className='w-[90%] mx-auto my-4'>
                 <p className='font-bold text-xl'>Current Selected Page : {page}</p>
-                <div className="flex my-4 p-2 border border-gray-400 inline">
+                <div className="flex my-4 p-2 border flex-wrap  border-gray-400 inline">
                 {
                     newpages >= 0 ? [...Array(newpages).keys()]?.map(number => <div key={number}>
                         <button key={number} className={page === number ? 'bg-[blue] w-[30px] h-[30px] rounded-full text-white  mx-2' : 'btn mx-2'} onClick={() => setPage(number)}>{number}</button>

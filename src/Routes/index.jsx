@@ -36,7 +36,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/selectedBus/:id',
-          element:<PrivetRoute><SelectedBusPage/></PrivetRoute>,
+          element:<SelectedBusPage/>,
           loader:({params})=>fetch(`https://pixelprose-backend.vercel.app/selectedBus/${params.id}`)
         },
         {
